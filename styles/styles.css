@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --link-color: #035fe6;
+  --link-color: #cf0989;
   --link-hover-color: #136ff6;
   --background-color: white;
   --light-color: #eee;
@@ -21,12 +21,12 @@
   --highlight-background-color: grey;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
+  --body-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  --heading-font-family: "Precision Sans", "Century Gothic", CenturyGothic, sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
+  --body-font-size-m: 1 rem;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
 
@@ -51,11 +51,11 @@
 
 @media (width >= 900px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
+    --heading-font-size-xxl: 2rem;
+    --heading-font-size-xl: 2rem;
+    --heading-font-size-l: 1.5rem;
     --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
+    --heading-font-size-s: 21px;
     --heading-font-size-xs: 22px;
   }
 }
@@ -81,7 +81,7 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 200;
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
@@ -94,6 +94,14 @@ h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
+
+h3 a:any-link {
+  color: #0072b8;
+}
+
+h2 {
+  text-align: center;
+}
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
@@ -134,7 +142,7 @@ a:hover {
 
 /* buttons */
 a.button:any-link, button {
-  font-family: var(--body-font-family);
+  font-family: var(--heading-font-family);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
@@ -142,7 +150,8 @@ a.button:any-link, button {
   padding: 5px 30px;
   text-align: center;
   font-style: normal;
-  font-weight: 600;
+  font-size: .875rem;
+  font-weight: 300;
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--link-color);
@@ -207,5 +216,10 @@ main .section {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  background-color: #3e53a4;
+  color: #FFF !important;
+}
+
+body > main > div.section.columns-container {
+  padding: 20px;
 }

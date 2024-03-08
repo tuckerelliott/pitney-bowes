@@ -1,6 +1,7 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-image: linear-gradient(to right, #3E53A4 0%, #118FE0 100%);
+  color: #FFF;
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -18,7 +19,7 @@ header nav {
   max-width: 1264px;
   height: var(--nav-height);
   padding: 0 1rem;
-  font-family: var(--body-font-family);
+  font-family: var(--heading-font-family);
 }
 
 header nav[aria-expanded="true"] {
@@ -54,7 +55,8 @@ header nav p {
 }
 
 header nav a.button:any-link {
-  background-color: #FFF;
+  background-color: #118FE0;
+  color: #FFF;
 }
 
 /* hamburger */
@@ -148,7 +150,7 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 203px;
   height: auto;
 }
 
@@ -166,6 +168,15 @@ header nav[aria-expanded="true"] .nav-sections {
   visibility: visible;
   align-self: start;
 }
+
+header nav .nav-quickLinks {
+  grid-area: sections;
+  flex: 1 1 auto;
+  display: none;
+  visibility: hidden;
+  background-color: var(--overlay-color);
+}
+
 
 header nav .nav-sections ul  {
   list-style: none;
@@ -191,6 +202,19 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     visibility: visible;
     white-space: nowrap;
+  }
+
+  header nav .nav-quickLinks {
+    grid-area: sections;
+    flex: 1 1 auto;
+    background-color: #023046;
+    display: block;
+    visibility: visible;
+    align-self: start;
+    position: absolute;
+    width: 105%;
+    margin-left: -40px;
+    height: 48px;
   }
 
   header nav[aria-expanded="true"] .nav-sections {
@@ -228,6 +252,16 @@ header nav .nav-sections ul > li > ul > li {
     gap: 2em;
     margin: 0;
     font-size: var(--body-font-size-xs);
+  }
+
+  header nav .nav-quickLinks ul {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+    color: #FFF;
+    /* margin: 0; */
+    font-size: 0.875rem;
+    text-transform: capitalize;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -272,4 +306,27 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-sections ul li:nth-child(4) {
+  margin-left: auto;
+  font-size: 14px;
+}
+
+header nav .nav-sections ul li:nth-child(5) {
+  border: 0.064rem solid #FFF;
+  padding: 5px 30px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header nav .nav-sections ul li:nth-child(6) {
+  border: none;
+  padding: 5px 0px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
